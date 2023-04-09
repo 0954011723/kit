@@ -38,7 +38,7 @@ try {
 				const config = await load_config();
 				await sync.all(config, 'development');
 			} catch (error) {
-				console.log('Error while trying to sync SvelteKit config');
+				// console.log('Error while trying to sync SvelteKit config');
 				console.log('在嘗試同步 SvelteKit 設定時發生錯誤');
 				console.log(error.stack);
 			}
