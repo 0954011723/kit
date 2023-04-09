@@ -1,8 +1,8 @@
-# The fastest way to build Svelte apps
+建置 Svelte 應用程式的最快方式
 
-This is the [SvelteKit](https://kit.svelte.dev) framework and CLI.
+這是 [SvelteKit](https://kit.svelte.dev) 框架和 CLI。
 
-The quickest way to get started is via the [create-svelte](https://github.com/sveltejs/kit/tree/master/packages/create-svelte) package:
+最快速的入門方式是透過 [create-svelte](https://github.com/sveltejs/kit/tree/master/packages/create-svelte) 套件：
 
 ```bash
 npm create svelte@latest my-app
@@ -11,8 +11,8 @@ npm install
 npm run dev
 ```
 
-See the [documentation](https://kit.svelte.dev/docs) to learn more.
+請參閱 [文件](https://kit.svelte.dev/docs)，以了解更多資訊。
 
-## Changelog
+## 更新日誌
 
-[The Changelog for this package is available on GitHub](https://github.com/sveltejs/kit/blob/master/packages/kit/CHANGELOG.md).
+此套件的 [更新日誌](https://github.com/sveltejs/kit/blob/master/packages/kit/CHANGELOG.md) 可於 GitHub 中取得。
