@@ -15,6 +15,7 @@ try {
 
 		if (pkg.workspaces) {
 			// we have to do this because of https://classic.yarnpkg.com/blog/2018/02/15/nohoist/
+			// 因為 https://classic.yarnpkg.com/blog/2018/02/15/nohoist/ 原因，我們必須這樣做。
 			const packages = Array.isArray(pkg.workspaces) ? pkg.workspaces : pkg.workspaces.packages;
 
 			for (const directory of packages) {
@@ -38,6 +39,7 @@ try {
 				await sync.all(config, 'development');
 			} catch (error) {
 				console.log('Error while trying to sync SvelteKit config');
+				console.log('在嘗試同步 SvelteKit 設定時發生錯誤');
 				console.log(error.stack);
 			}
 		}
