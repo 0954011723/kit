@@ -1,46 +1,45 @@
-[![Chat](https://img.shields.io/discord/457912077277855764?label=chat&logo=discord)](https://svelte.dev/chat)
-
 # SvelteKit
 
-Web development, streamlined. Read the [documentation](https://kit.svelte.dev/docs) to get started.
+SvelteKit 為 Web 開發提供簡化的解決方案。請閱讀 [文件](https://kit.svelte.dev/docs) 開始使用。
 
-### Packages
+### 套件
+ 
+| 套件                                                                         | 更動紀錄                                                       |
+| ---------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| [@sveltejs/kit](packages/kit)                                                | [更動紀錄](packages/kit/CHANGELOG.md)                          |
+| [@sveltejs/adapter-auto](packages/adapter-auto)                              | [更動紀錄](packages/adapter-auto/CHANGELOG.md)                 |
+| [@sveltejs/adapter-cloudflare](packages/adapter-cloudflare)                  | [更動紀錄](packages/adapter-cloudflare/CHANGELOG.md)           |
+| [@sveltejs/adapter-cloudflare-workers](packages/adapter-cloudflare-workers)  | [更動紀錄](packages/adapter-cloudflare-workers/CHANGELOG.md)   |
+| [@sveltejs/adapter-netlify](packages/adapter-netlify)                        | [更動紀錄](packages/adapter-netlify/CHANGELOG.md)              |
+| [@sveltejs/adapter-node](packages/adapter-node)                              | [更動紀錄](packages/adapter-node/CHANGELOG.md)                 |
+| [@sveltejs/adapter-static](packages/adapter-static)                          | [更動紀錄](packages/adapter-static/CHANGELOG.md)               |
+| [@sveltejs/adapter-vercel](packages/adapter-vercel)                          | [更動紀錄](packages/adapter-vercel/CHANGELOG.md)               |
+| [@sveltejs/amp](packages/amp)                                                | [更動紀錄](packages/amp/CHANGELOG.md)                          |
+| [@sveltejs/package](packages/package)                                        | [更動紀錄](packages/package/CHANGELOG.md)                      |
+| [create-svelte](packages/create-svelte)                                      | [更動紀錄](packages/create-svelte/CHANGELOG.md)                |
+| [svelte-migrate](packages/migrate)                                           | [更動紀錄](packages/migrate/CHANGELOG.md)                      |
 
-| Package                                                                     | Changelog                                                     |
-| --------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| [@sveltejs/kit](packages/kit)                                               | [Changelog](packages/kit/CHANGELOG.md)                        |
-| [@sveltejs/adapter-auto](packages/adapter-auto)                             | [Changelog](packages/adapter-auto/CHANGELOG.md)               |
-| [@sveltejs/adapter-cloudflare](packages/adapter-cloudflare)                 | [Changelog](packages/adapter-cloudflare/CHANGELOG.md)         |
-| [@sveltejs/adapter-cloudflare-workers](packages/adapter-cloudflare-workers) | [Changelog](packages/adapter-cloudflare-workers/CHANGELOG.md) |
-| [@sveltejs/adapter-netlify](packages/adapter-netlify)                       | [Changelog](packages/adapter-netlify/CHANGELOG.md)            |
-| [@sveltejs/adapter-node](packages/adapter-node)                             | [Changelog](packages/adapter-node/CHANGELOG.md)               |
-| [@sveltejs/adapter-static](packages/adapter-static)                         | [Changelog](packages/adapter-static/CHANGELOG.md)             |
-| [@sveltejs/adapter-vercel](packages/adapter-vercel)                         | [Changelog](packages/adapter-vercel/CHANGELOG.md)             |
-| [@sveltejs/amp](packages/amp)                                               | [Changelog](packages/amp/CHANGELOG.md)                        |
-| [@sveltejs/package](packages/package)                                       | [Changelog](packages/package/CHANGELOG.md)                    |
-| [create-svelte](packages/create-svelte)                                     | [Changelog](packages/create-svelte/CHANGELOG.md)              |
-| [svelte-migrate](packages/migrate)                                          | [Changelog](packages/migrate/CHANGELOG.md)                    |
+[其他 Adapter](<(https://sveltesociety.dev/components#adapters)>) 由社群維護。
 
-[Additional adapters](<(https://sveltesociety.dev/components#adapters)>) are maintained by the community.
+## 回報問題
 
-## Bug reporting
+請確定回報的問題與 SvelteKit 相關。 許多與專案建置相關的問題都來自於建構 SvelteKit 專案的 [Vite](https://vitejs.dev/)。
+可以使用 `npm create vite@latest` 建立全新的 Vite 專案，進行僅限客戶端的重現或使用 `npm create vite-extra@latest` 進行 SSR 或程式庫的重現。
 
-Please make sure the issue you're reporting involves SvelteKit. Many issues related to how a project builds originate from [Vite](https://vitejs.dev/), which is used to build a SvelteKit project. You can create a new Vite project with `npm create vite@latest` for client-side only repros and `npm create vite-extra@latest` for SSR or library repros.
+如果問題來自 Vite，請在 [Vite 問題追蹤器](https://github.com/vitejs/vite/issues) 中回報。
 
-If an issue originates from Vite, please report it in the [Vite issue tracker](https://github.com/vitejs/vite/issues).
+## 貢獻
 
-## Contributing
+請參閱 [CONTRIBUTING.md](./CONTRIBUTING.md) 獲取有關在本地開發 SvelteKit 的訊息。
 
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for information on how to develop SvelteKit locally.
+## 支援 Svelte
 
-## Supporting Svelte
+Svelte 是一個 MIT 授權的開源項目，由優秀的志願者完全支援其持續發展。 如果您想支持他們的努力，請考慮：
 
-Svelte is an MIT-licensed open source project with its ongoing development made possible entirely by fantastic volunteers. If you'd like to support their efforts, please consider:
+- 在 [Open Collective](https://opencollective.com/svelte) 上成為贊助商。
 
-- [Becoming a backer on Open Collective](https://opencollective.com/svelte).
+通過 Open Collective 捐贈的資金將用於補償與 Svelte 的發展相關的費用，例如託管費用。 如果收到足夠的捐款，資金還可用於更直接地支援 Svelte 的發展。
 
-Funds donated via Open Collective will be used for compensating expenses related to Svelte's development such as hosting costs. If sufficient donations are received, funds may also be used to support Svelte's development more directly.
-
-## License
+## 授權
 
 [MIT](https://github.com/sveltejs/kit/blob/master/LICENSE)
