@@ -1,58 +1,36 @@
-// This module contains types that are visible in the documentation,
-// but which cannot be imported from `@sveltejs/kit`. Care should
-// be taken to avoid breaking changes when editing this file
+// 這個模組包含在文件中可見但無法從 @sveltejs/kit 中匯入的類型。
+// 在編輯此文件時，應注意避免破壞更改。
 
 import { RouteDefinition } from './index.js';
 
 export interface AdapterEntry {
 	/**
-	 * A string that uniquely identifies an HTTP service (e.g. serverless function) and is used for deduplication.
-	 * For example, `/foo/a-[b]` and `/foo/[c]` are different routes, but would both
-	 * be represented in a Netlify _redirects file as `/foo/:param`, so they share an ID
-	 */
+   * 字串，唯一地識別 HTTP 服務（例如：無伺服器函式），並用於去重。例如，/foo/a-[b] 和 /foo/[c]
+   * 是不同的路由，但在 Netlify 的 _redirects 文件中都表示為 /foo/:param，因此它們共享一個 ID。
+   */
 	id: string;
 
 	/**
-	 * A function that compares the candidate route with the current route to determine
-	 * if it should be grouped with the current route.
+	 * 這個函式，用於比較候選路由與當前路由以確定是否應將其與當前路由分組。
 	 *
-	 * Use cases:
-	 * - Fallback pages: `/foo/[c]` is a fallback for `/foo/a-[b]`, and `/[...catchall]` is a fallback for all routes
-	 * - Grouping routes that share a common `config`: `/foo` should be deployed to the edge, `/bar` and `/baz` should be deployed to a serverless function
+	 * 使用範例：
+	 * - 備援頁面: `/foo/[c]` 是 `/foo/a-[b]` 的備援選項，而`/[...catchall]` 則是所有路由的備援選項。
+	 * - `config` 共用的路由進行分組: `/foo` 應該部署到邊緣節點，`/bar` 和 `/baz` 則應該部署到無伺服器函數。
 	 */
 	filter(route: RouteDefinition): boolean;
 
-	/**
-	 * A function that is invoked once the entry has been created. This is where you
-	 * should write the function to the filesystem and generate redirect manifests.
+	/**	 
+	 * 當 `entry` 被建立後會呼叫此函數。在這裡應該撰寫將函數寫入檔案系統並重新導向清單的地方。	 
 	 */
 	complete(entry: { generateManifest(opts: { relativePath: string }): string }): MaybePromise<void>;
 }
 
-// Based on https://github.com/josh-hemphill/csp-typed-directives/blob/latest/src/csp.types.ts
+// 基於 https://github.com/josh-hemphill/csp-typed-directives/blob/latest/src/csp.types.ts
 //
 // MIT License
 //
 // Copyright (c) 2021-present, Joshua Hemphill
 // Copyright (c) 2021, Tecnico Corporation
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in all
-// copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-// SOFTWARE.
 
 export namespace Csp {
 	type ActionSource = 'strict-dynamic' | 'report-sample';
@@ -157,28 +135,28 @@ export interface Logger {
 export type MaybePromise<T> = T | Promise<T>;
 
 export interface Prerendered {
-	/**
-	 * A map of `path` to `{ file }` objects, where a path like `/foo` corresponds to `foo.html` and a path like `/bar/` corresponds to `bar/index.html`.
-	 */
+	/** 
+   * `path` 對應到 `{ file }` 物件的對映表，其中像 `/foo` 的路徑對應到 `foo.html`，而像 `/bar/` 的路徑對應到 `bar/index.html`。
+ 	 */
 	pages: Map<
 		string,
 		{
-			/** The location of the .html file relative to the output directory */
+			/** `.html` 檔案輸出目錄的相對路徑。 */
 			file: string;
 		}
 	>;
 	/**
-	 * A map of `path` to `{ type }` objects.
+	 * 從 `path` 到 `{ type }` 物件的對應。.
 	 */
 	assets: Map<
 		string,
 		{
-			/** The MIME type of the asset */
+			/** MIME 的資源類型。 */
 			type: string;
 		}
 	>;
 	/**
-	 * A map of redirects encountered during prerendering.
+	 * 預覽期間遇到的重新導向對應。
 	 */
 	redirects: Map<
 		string,
@@ -187,7 +165,7 @@ export interface Prerendered {
 			location: string;
 		}
 	>;
-	/** An array of prerendered paths (without trailing slashes, regardless of the trailingSlash config) */
+	/** 預覽路徑的陣列（不含反鈄線，不論 trailingSlash 設定如何）。 */
 	paths: string[];
 }
 
@@ -226,7 +204,7 @@ export interface RouteSegment {
 export type TrailingSlash = 'never' | 'always' | 'ignore';
 
 /**
- * This doesn't actually exist, it's a way to better distinguish the type
+ * 這並不存在於實際情況中，它僅是一種更好地區分類型的方式。
  */
 declare const uniqueSymbol: unique symbol;
 
