@@ -1,14 +1,13 @@
----
-title: Integrations
----
+## 前置處理器
 
-## Preprocessors
-
-Preprocessors transform your `.svelte` files before passing them to the compiler. For example, if your `.svelte` file uses TypeScript and PostCSS, it must first be transformed into JavaScript and CSS so that the Svelte compiler can handle it. There are many [available preprocessors](https://sveltesociety.dev/tools#preprocessors). The Svelte team maintains two official ones discussed below.
+前置處理器會在將 `.svelte` 檔案傳遞給編譯器之前轉換檔案。例如： 某個 `.svelte` 檔案使用 TypeScript 和 PostCSS，必須先被轉換成 JavaScript 和 CSS，以便 Svelte 編譯器能夠處理。
+有許多可用的 [前置處理器](https://sveltesociety.dev/tools#preprocessors) ，Svelte 團隊維護以下兩種官方前置處理器。
 
 ### `vitePreprocess`
 
-`vite-plugin-svelte` offers a [`vitePreprocess`](https://github.com/sveltejs/vite-plugin-svelte/blob/main/docs/preprocess.md) feature which utilizes Vite for preprocessing. It is capable of handling the language flavors Vite handles: TypeScript, PostCSS, SCSS, Less, Stylus, and SugarSS. For convenience, it is re-exported from the `@sveltejs/kit/vite` package. If you set your project up with TypeScript it will be included by default:
+`vite-plugin-svelte` 提供 [`vitePreprocess`](https://github.com/sveltejs/vite-plugin-svelte/blob/main/docs/preprocess.md) 功能，利用 Vite 進行前置處理。
+使它能夠處理 Vite 支援的程式語言類型：TypeScript、PostCSS、SCSS、Less、Stylus 和 SugarSS。
+為了方便起見，它從 `@sveltejs/kit/vite` 套件中重新匯出，如果使用 TypeScript 專案則預設值會包含以下程式碼：
 
 ```js
 // svelte.config.js
@@ -21,14 +20,25 @@ export default {
 
 ### `svelte-preprocess`
 
-`svelte-preprocess` has some additional functionality not found in `vitePreprocess` such as support for Pug, Babel, and global styles. However, `vitePreprocess` may be faster and require less configuration, so it is used by default. Note that CoffeeScript is [not supported](https://github.com/sveltejs/kit/issues/2920#issuecomment-996469815) by SvelteKit.
+`svelte-preprocess` 具有 `vitePreprocess` 中找不到的附加功能，例如： Pug、Babel 和全區風格的支援。
+但 `vitePreprocess` 更快且只需較少的設定，因此預設使用它。請注意，SvelteKit 不支援 CoffeeScript。
 
-You will need to install `svelte-preprocess` with `npm install --save-dev svelte-preprocess` and [add it to your `svelte.config.js`](https://github.com/sveltejs/svelte-preprocess/blob/main/docs/usage.md#with-svelte-config). After that, you will often need to [install the corresponding library](https://github.com/sveltejs/svelte-preprocess/blob/main/docs/getting-started.md) such as `npm install -D sass` or `npm install -D less`.
+需要安裝 `svelte-preprocess`，並將其添加到您的[`svelte.config.js`](https://github.com/sveltejs/svelte-preprocess/blob/main/docs/usage.md#with-svelte-config)。
+```
+npm install --save-dev svelte-preprocess
+``` 
+之後再 [安裝相應的套件](https://github.com/sveltejs/svelte-preprocess/blob/main/docs/getting-started.md)，例如： `sass`或 `less`
+```
+npm install -D sass
+```
+```
+npm install -D less
+```
+## 整合程式
 
-## Adders
+[Svelte Adders](https://sveltesociety.dev/templates#adders) 可以使用單個命令設定許多不同的複雜整合，如 Tailwind、PostCSS、Storybook、Firebase、GraphQL、mdsvex 等等。
+請參閱 [sveltesociety.dev](https://sveltesociety.dev/) 獲取可用於 Svelte 和 SvelteKit 的範本、組件和工具的完整清單。
 
-[Svelte Adders](https://sveltesociety.dev/templates#adders) allow you to setup many different complex integrations like Tailwind, PostCSS, Storybook, Firebase, GraphQL, mdsvex, and more with a single command. Please see [sveltesociety.dev](https://sveltesociety.dev/) for a full listing of templates, components, and tools available for use with Svelte and SvelteKit.
+## 整合常見問題
 
-## Integration FAQs
-
-The SvelteKit FAQ has a [section on integrations](/faq#integrations), which may be helpful if you still have questions.
+SvelteKit 常見問題解答中有一節 [關於整合](/faq#integrations)，如果還有問題，可以參考該節。
