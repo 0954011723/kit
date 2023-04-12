@@ -4,7 +4,7 @@
 
 ## 文件
 [官方文件](https://kit.svelte.dev/docs/adapter-auto)
-[本機文件](./kit/edit/master/documentation/docs/25-build-and-deploy/30-adapter-auto.md)
+[本機文件](./kit/blob/master/documentation/docs/25-build-and-deploy/30-adapter-auto.md)
 
 ## 更新日誌
 
