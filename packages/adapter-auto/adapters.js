@@ -1,5 +1,5 @@
 // 需要檢查的 adapter 清單。 `version` 用於安裝 adapter 指定的版本。
-// adapter-auto 會依 peerDependency 所描述的內容來安裝 SvelteKit 相容的最新版本。
+// adapter-auto 會依 package.json 中 peerDependency 所描述的內容來安裝 SvelteKit 相容的最新版本。
 export const adapters = [
 	{
 		name: 'Vercel',
